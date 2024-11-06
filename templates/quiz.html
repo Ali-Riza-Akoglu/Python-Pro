@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Sınav</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>NLP (Nöro-dilbilim) Sınavı</h1>
+    
+    <!-- Kullanıcı adı-->
+    <form method="POST">
+        <label for="username">Adınızı girin:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <h2>1. NLP'nin anlamı nedir?</h2>
+        <input type="radio" name="answers1" value="1" required> Nöro-dilbilim<br>
+        <input type="radio" name="answers1" value="0" required> Doğal dil işleme<br>
+        <input type="radio" name="answers1" value="0" required> Yapay zeka<br>
+        <input type="radio" name="answers1" value="0" required> Duygu analizi<br>
+
+        <h2>2. Hangi NLP tekniği, metindeki kelimelerin anlamını çıkarmak için kullanılır?</h2>
+        <input type="radio" name="answers2" value="0" required> Regresyon analizi<br>
+        <input type="radio" name="answers2" value="1" required> Anlam çıkarımı<br>
+        <input type="radio" name="answers2" value="0" required> Karar ağaçları<br>
+        <input type="radio" name="answers2" value="0" required> Kümelenme<br>
+
+        <h2>3. Hangi işlem, bir dilin metin verilerini sayısal verilere dönüştürür?</h2>
+        <input type="radio" name="answers3" value="1" required> Vektörleştirme<br>
+        <input type="radio" name="answers3" value="0" required> Normalizasyon<br>
+        <input type="radio" name="answers3" value="0" required> Duygu analizi<br>
+        <input type="radio" name="answers3" value="0" required> Veri temizleme<br>
+
+        <h2>4. Hangi NLP algoritması, kelimeleri veya cümleleri gramatikal bağlamda anlamlandırmak için kullanılır?</h2>
+        <input type="radio" name="answers4" value="1" required> Parçalama (Tokenization)<br>
+        <input type="radio" name="answers4" value="0" required> Yüzeysel analiz<br>
+        <input type="radio" name="answers4" value="0" required> Çıkarım (Inference)<br>
+        <input type="radio" name="answers4" value="0" required> Derin öğrenme<br>
+
+        <h2>5. NLP uygulamalarında hangi model, metinlerin anlamını öğrenmek için sıklıkla kullanılır?</h2>
+        <input type="radio" name="answers5" value="1" required> Duygu analizi<br>
+        <input type="radio" name="answers5" value="0" required> Sinir ağları<br>
+        <input type="radio" name="answers5" value="0" required> Derin öğrenme<br>
+        <input type="radio" name="answers5" value="0" required> Kümelenme<br>
+
+        <h2>6. NLP uygulamalarında hangi model, metinlerin anlamını öğrenmek için sıklıkla kullanılır?</h2>
+        <input type="radio" name="answers6" value="1" required> BERT<br>
+        <input type="radio" name="answers6" value="0" required> XGBoost<br>
+        <input type="radio" name="answers6" value="0" required> SVM<br>
+        <input type="radio" name="answers6" value="0" required> Random Forest<br>
+
+        <button type="submit">Gönder</button>
+    </form>
+
+    {% if session.get('score') is not none %}
+        <h3>Puanınız: {{ session['score'] }} / 100</h3>
+        <h4>En Yüksek Puan: {{ best_score }} (Alınan: {{ top_users }})</h4>
+    {% endif %}
+
+    <footer>Geliştirici: [Ali Rıza AKOĞLU]</footer>
+</body>
+</html>

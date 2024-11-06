@@ -1,0 +1,14 @@
+Link : https://aliriza.pythonanywhere.com/
+
+Proje Özeti: Basit Quiz Uygulaması
+Bu proje, Flask kullanarak yapılan basit bir quiz (soru-cevap) uygulamasıdır. 
+Kullanıcılar belirli soruları yanıtlar ve puanlarını görürler. 
+Sonuçlar veritabanında saklanır.
+
+flask_quiz_site/
+    ├── app.py              # Flask uygulaması
+    ├── templates/          # HTML şablonları
+    │   └── quiz.html       # Quiz şablonu
+    ├── static/             # Statik dosyalar (CSS, JS)
+        ├── style.css       # CSS dosyası
+    └── quiz.db             # SQLite veritabanı (kullanıcı puanları)
